@@ -19,7 +19,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('1.0.0') // change this string to ensure a new version deployed
+  res.send('0.0.7') // change this string to ensure a new version deployed
 })
 
 app.get('/api/dialogflow', function (req, res) {
