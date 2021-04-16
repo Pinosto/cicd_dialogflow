@@ -1,11 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-import { useSpeechSynthesis } from 'react-speech-kit';
+/* eslint-disable no-console */
+import React from 'react'
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
+import { useSpeechSynthesis } from 'react-speech-kit'
 import axios from 'axios'
 import { v4 as uuid } from 'uuid'
-import logo from './logo.svg';
-import './App.css';
-import { useEffect, useState } from 'react';
+import logo from './logo.svg'
+import './App.css'
+import { useEffect, useState } from 'react'
 const baseUrl = '/api/dialogflow'
 
 
@@ -19,8 +20,8 @@ const App = () => {
     },
   ]
 
-  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
-  const { speak } = useSpeechSynthesis();
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands })
+  const { speak } = useSpeechSynthesis()
   const [chatOn, setchatOn] = useState(false)
   const [myPhrase, setMyPhrase] = useState('')
   const [botPhrase, setBotPhrase] = useState('')
@@ -54,24 +55,24 @@ const App = () => {
       <div>
         Browser is not Support Speech Recognition.
       </div>
-    );
+    )
   }
 
   const handleChatOn = () => {
     setchatOn(!chatOn)
-    setBotPhrase(`What's on Your Mind?`)
+    setBotPhrase('What\'s on Your Mind?')
     SpeechRecognition.startListening({
       continuous: true,
       language: 'en-US',
-    });
+    })
   }
   const handleChatOff = () => {
-    SpeechRecognition.stopListening();
-    resetTranscript();
+    SpeechRecognition.stopListening()
+    resetTranscript()
     setchatOn(!chatOn)
   }
-  const notSoFast = (e) => {
-    setBotPhrase(`Hey don't leave.`)
+  const notSoFast = () => {
+    setBotPhrase('Hey don\'t leave.')
   }
 
 
@@ -104,7 +105,7 @@ const App = () => {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
