@@ -96,7 +96,7 @@ const App = () => {
         }
         <a
           className="App-link"
-          href="https://github.com/Pinosto/boilerplate-chat"
+          href="https://github.com/Pinosto/cicd_dialogflow"
           target="_blank"
           rel="noopener noreferrer"
           onClick={notSoFast}
