@@ -57,7 +57,7 @@ jobs:
           custom_payload: |
             {
               attachments: [{
-                text: `new version deployed to https://pokedex-app-pinosto.herokuapp.com/ by ${process.env.AS_AUTHOR} ${{ job.status }} in ${process.env.AS_TOOK}`,
+                text: `new version deployed to https://cicd-dialogflow-pinosto.herokuapp.com/ by ${process.env.AS_AUTHOR} ${{ job.status }} in ${process.env.AS_TOOK}`,
               }]
             } 
         env:
